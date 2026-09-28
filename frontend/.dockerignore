@@ -1,0 +1,26 @@
+# .dockerignore (frontend)
+#
+# Tudo o que está listado aqui NÃO é enviado para o Docker no contexto
+# de build, então também não pode ir parar dentro da imagem.
+
+# Dependências: são instaladas dentro da imagem com "npm ci"
+node_modules
+npm-debug.log*
+
+# Build local: a imagem gera o seu próprio dist/
+dist
+
+# Configuração local: no container, VITE_API_URL vem do Dockerfile
+.env
+
+# Histórico e configuração do Git
+.git
+.gitignore
+
+# Arquivos que não fazem parte do build
+*.zip
+README.md
+
+# Arquivos do próprio Docker
+Dockerfile
+.dockerignore
