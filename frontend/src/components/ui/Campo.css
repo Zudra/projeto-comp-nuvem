@@ -1,0 +1,64 @@
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-1);
+}
+
+.campo__rotulo {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.campo__obrigatorio {
+  color: var(--cor-perigo);
+}
+
+.campo__input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: var(--cor-texto);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio-sm);
+  transition:
+    border-color var(--transicao-rapida),
+    box-shadow var(--transicao-rapida);
+}
+
+.campo__input::placeholder {
+  color: var(--cor-texto-claro);
+}
+
+.campo__input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px var(--cor-primaria-suave);
+}
+
+.campo__input:disabled {
+  background: var(--cor-superficie-alt);
+  color: var(--cor-texto-suave);
+  cursor: not-allowed;
+}
+
+.campo__input--erro {
+  border-color: var(--cor-perigo);
+}
+.campo__input--erro:focus {
+  box-shadow: 0 0 0 3px var(--cor-perigo-suave);
+}
+
+.campo__ajuda {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+}
+
+.campo__erro {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--cor-perigo);
+}

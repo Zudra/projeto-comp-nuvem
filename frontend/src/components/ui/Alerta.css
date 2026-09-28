@@ -1,0 +1,33 @@
+.alerta {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espaco-2);
+  padding: var(--espaco-3) var(--espaco-4);
+  border-radius: var(--raio-md);
+  font-size: 0.88rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.alerta--erro {
+  background: var(--cor-perigo-suave);
+  color: var(--cor-perigo-texto);
+  border-color: rgba(165, 55, 44, 0.2);
+}
+
+.alerta--sucesso {
+  background: var(--cor-sucesso-suave);
+  color: var(--cor-sucesso-texto);
+  border-color: rgba(47, 111, 91, 0.2);
+}
+
+.alerta--aviso {
+  background: var(--cor-aviso-suave);
+  color: var(--cor-aviso-texto);
+  border-color: rgba(147, 101, 15, 0.2);
+}
+
+.alerta svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}

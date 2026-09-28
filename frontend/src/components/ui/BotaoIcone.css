@@ -1,0 +1,30 @@
+.botao-icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--raio-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--cor-texto-suave);
+  cursor: pointer;
+  transition:
+    background var(--transicao-rapida),
+    color var(--transicao-rapida);
+}
+
+.botao-icone--neutro:hover {
+  background: var(--cor-superficie-alt);
+  color: var(--cor-texto);
+}
+
+.botao-icone--perigo:hover {
+  background: var(--cor-perigo-suave);
+  color: var(--cor-perigo);
+}
+
+.botao-icone:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

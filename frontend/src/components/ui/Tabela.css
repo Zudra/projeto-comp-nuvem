@@ -1,0 +1,99 @@
+/*
+  Tabela.css
+  ==========
+
+  Não existe um componente <Tabela> genérico aqui - cada página
+  escreve seu próprio <table> em JSX, porque cada uma tem colunas
+  bem diferentes (livros, usuários, reservas). O que é comum é a
+  aparência, então essa aparência foi isolada num único arquivo CSS
+  compartilhado, aplicado através da classe "tabela".
+*/
+
+.tabela-wrapper {
+  overflow-x: auto;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.tabela th {
+  text-align: left;
+  padding: var(--espaco-3) var(--espaco-4);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cor-texto-suave);
+  border-bottom: 1px solid var(--cor-borda);
+  white-space: nowrap;
+}
+
+.tabela td {
+  padding: var(--espaco-3) var(--espaco-4);
+  border-bottom: 1px solid var(--cor-borda);
+  vertical-align: middle;
+}
+
+.tabela tbody tr {
+  transition: background var(--transicao-rapida);
+}
+
+.tabela tbody tr:hover {
+  background: var(--cor-superficie-alt);
+}
+
+.tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela__linha-link {
+  color: var(--cor-texto);
+  font-weight: 600;
+}
+.tabela__linha-link:hover {
+  color: var(--cor-primaria);
+  text-decoration: none;
+}
+
+.tabela__acoes {
+  display: flex;
+  gap: var(--espaco-1);
+  justify-content: flex-end;
+}
+
+.tabela__coluna-acoes {
+  text-align: right;
+}
+
+/* ---------- Barra de busca no topo das listagens ---------- */
+.barra-filtro {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  padding: 8px 12px;
+  margin-bottom: var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  background: var(--cor-superficie-alt);
+  color: var(--cor-texto-suave);
+}
+
+.barra-filtro__input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.88rem;
+  font-family: inherit;
+  color: var(--cor-texto);
+}
+
+.barra-filtro__input:focus {
+  outline: none;
+}
+
+.barra-filtro__input::placeholder {
+  color: var(--cor-texto-claro);
+}

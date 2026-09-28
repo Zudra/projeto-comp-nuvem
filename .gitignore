@@ -1,0 +1,17 @@
+# Variáveis de ambiente com valores reais (use o .env.example como modelo)
+.env
+
+# Dependências e builds
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# Arquivos compactados
+*.zip
+
+# Editores e sistema operacional
+.vscode/
+.idea/
+.DS_Store

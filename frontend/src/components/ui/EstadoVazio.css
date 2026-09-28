@@ -1,0 +1,30 @@
+.estado-vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--espaco-7) var(--espaco-4);
+  color: var(--cor-texto-suave);
+}
+
+.estado-vazio__icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--raio-completo);
+  background: var(--cor-superficie-alt);
+  color: var(--cor-texto-suave);
+  margin-bottom: var(--espaco-3);
+}
+
+.estado-vazio h3 {
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-1);
+}
+
+.estado-vazio p {
+  max-width: 360px;
+  margin-bottom: var(--espaco-4);
+}

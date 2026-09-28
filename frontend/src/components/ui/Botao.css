@@ -1,0 +1,81 @@
+/*
+  Estas classes (.botao, .botao--primaria, ...) também são usadas
+  diretamente em componentes <Link> do react-router, para links que
+  precisam ter cara de botão (ex: "Novo livro" na listagem). Por
+  isso os estilos abaixo não dependem da tag ser <button>.
+*/
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-2);
+  border: 1px solid transparent;
+  border-radius: var(--raio-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background var(--transicao-rapida),
+    border-color var(--transicao-rapida),
+    color var(--transicao-rapida),
+    transform var(--transicao-rapida);
+  white-space: nowrap;
+}
+
+.botao:active {
+  transform: translateY(1px);
+}
+
+.botao:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+/* ---------- Tamanhos ---------- */
+.botao--md {
+  padding: 10px 18px;
+  font-size: 0.9rem;
+}
+.botao--sm {
+  padding: 6px 12px;
+  font-size: 0.82rem;
+}
+
+/* ---------- Variantes ---------- */
+.botao--primaria {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+.botao--primaria:hover:not(:disabled) {
+  background: var(--cor-primaria-hover);
+}
+
+.botao--secundaria {
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  border-color: var(--cor-borda-forte);
+}
+.botao--secundaria:hover:not(:disabled) {
+  background: var(--cor-superficie-alt);
+}
+
+.botao--perigo {
+  background: var(--cor-superficie);
+  color: var(--cor-perigo);
+  border-color: var(--cor-perigo-suave);
+}
+.botao--perigo:hover:not(:disabled) {
+  background: var(--cor-perigo-suave);
+  border-color: var(--cor-perigo);
+}
+
+.botao--fantasma {
+  background: transparent;
+  color: var(--cor-texto-suave);
+  border-color: transparent;
+}
+.botao--fantasma:hover:not(:disabled) {
+  background: var(--cor-superficie-alt);
+  color: var(--cor-texto);
+}

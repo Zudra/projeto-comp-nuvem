@@ -1,0 +1,87 @@
+/*
+  tokens.css
+  ==========
+
+  Aqui ficam as "variáveis de design" (design tokens) do projeto: as
+  cores, fontes, espaçamentos, bordas e sombras que se repetem pela
+  aplicação inteira.
+
+  Por que usar variáveis em vez de escrever a cor direto em cada
+  arquivo .css? Duas razões:
+    1) Consistência: todo botão "perigo" usa exatamente o mesmo
+       vermelho, porque todos apontam para a mesma variável.
+    2) Manutenção: para trocar o tema inteiro, muda-se o valor aqui
+       uma vez, em vez de caçar a cor em dezenas de arquivos.
+
+  O tema escolhido é inspirado em papel/biblioteca: um fundo bege
+  claro (quase branco) com um verde-floresta profundo como cor de
+  destaque — remete a livros e bibliotecas sem parecer "brega", e
+  contrasta bem tanto para texto quanto para botões.
+*/
+
+:root {
+  /* ---------- Cores neutras (fundo, texto, bordas) ---------- */
+  --cor-fundo: #f8f7f3; /* fundo da página: bege bem claro, tipo papel */
+  --cor-superficie: #ffffff; /* fundo de cartões, tabelas, formulários */
+  --cor-superficie-alt: #f1efe8; /* fundo levemente destacado (hover, listras) */
+  --cor-borda: #e4e0d6; /* bordas sutis entre elementos */
+  --cor-borda-forte: #cfc9b8; /* bordas com mais contraste (inputs em foco, etc.) */
+
+  --cor-texto: #23211c; /* texto principal, quase preto */
+  --cor-texto-suave: #6f6a5c; /* texto secundário (legendas, ajuda) */
+  --cor-texto-claro: #a29c8a; /* texto desabilitado / placeholder */
+
+  /* ---------- Cor de marca (verde-floresta) ---------- */
+  --cor-primaria: #2f6f5b;
+  --cor-primaria-hover: #255a49;
+  --cor-primaria-suave: #e3efe9; /* fundo suave para destacar algo com a cor da marca */
+  --cor-primaria-texto: #1d4237; /* texto sobre --cor-primaria-suave */
+
+  /* ---------- Cores de estado (sucesso, erro, aviso) ---------- */
+  --cor-sucesso: #2f6f5b;
+  --cor-sucesso-suave: #e3efe9;
+  --cor-sucesso-texto: #1d4237;
+
+  --cor-perigo: #a5372c;
+  --cor-perigo-hover: #872c23;
+  --cor-perigo-suave: #f9e7e4;
+  --cor-perigo-texto: #7a281f;
+
+  --cor-aviso: #93650f;
+  --cor-aviso-suave: #f8eed9;
+  --cor-aviso-texto: #6e4b0b;
+
+  /* ---------- Tipografia ---------- */
+  --fonte-base:
+    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fonte-titulo:
+    "Sora", "Inter", system-ui, sans-serif;
+
+  /* ---------- Espaçamento (escala de 4px) ---------- */
+  --espaco-1: 4px;
+  --espaco-2: 8px;
+  --espaco-3: 12px;
+  --espaco-4: 16px;
+  --espaco-5: 24px;
+  --espaco-6: 32px;
+  --espaco-7: 48px;
+  --espaco-8: 64px;
+
+  /* ---------- Bordas arredondadas ---------- */
+  --raio-sm: 6px;
+  --raio-md: 10px;
+  --raio-lg: 16px;
+  --raio-completo: 999px; /* círculo / pílula */
+
+  /* ---------- Sombras (bem sutis, para manter o visual "limpo") ---------- */
+  --sombra-sm: 0 1px 2px rgba(35, 33, 28, 0.06);
+  --sombra-md: 0 4px 16px rgba(35, 33, 28, 0.08);
+  --sombra-lg: 0 12px 32px rgba(35, 33, 28, 0.12);
+
+  /* ---------- Transições ---------- */
+  --transicao-rapida: 120ms ease;
+  --transicao-normal: 200ms ease;
+
+  /* ---------- Largura máxima do conteúdo ---------- */
+  --largura-conteudo: 1080px;
+}

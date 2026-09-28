@@ -1,0 +1,96 @@
+.inicio-hero {
+  padding: var(--espaco-6) 0 var(--espaco-2);
+}
+
+.inicio-hero h1 {
+  font-size: 2rem;
+  margin-bottom: var(--espaco-2);
+}
+
+.inicio-hero p {
+  max-width: 620px;
+  color: var(--cor-texto-suave);
+  margin-bottom: var(--espaco-4);
+}
+
+/* ---------- Cartões de estatística ---------- */
+.cartao-estatistica {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  padding: var(--espaco-4) var(--espaco-5);
+  box-shadow: var(--sombra-sm);
+  color: var(--cor-texto);
+  transition:
+    transform var(--transicao-rapida),
+    box-shadow var(--transicao-rapida);
+}
+
+.cartao-estatistica:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-md);
+}
+
+.cartao-estatistica__icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: var(--raio-md);
+  background: var(--cor-primaria-suave);
+  color: var(--cor-primaria-texto);
+}
+
+.cartao-estatistica strong {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.cartao-estatistica span {
+  font-size: 0.82rem;
+  color: var(--cor-texto-suave);
+}
+
+/* ---------- "Como funciona" ---------- */
+.passos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--espaco-4);
+  margin-top: var(--espaco-4);
+}
+
+.passos__item {
+  display: flex;
+  gap: var(--espaco-3);
+}
+
+.passos__icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--raio-md);
+  background: var(--cor-superficie-alt);
+  color: var(--cor-primaria);
+}
+
+.passos__item h3 {
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
+.passos__item p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}

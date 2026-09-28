@@ -1,0 +1,14 @@
+.rodape {
+  margin-top: var(--espaco-8);
+  border-top: 1px solid var(--cor-borda);
+}
+
+.rodape__conteudo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  padding: var(--espaco-5) var(--espaco-5);
+  font-size: 0.8rem;
+  color: var(--cor-texto-claro);
+}

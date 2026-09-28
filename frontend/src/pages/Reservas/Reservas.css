@@ -1,0 +1,27 @@
+.filtro-status {
+  display: inline-flex;
+  padding: 3px;
+  margin-bottom: var(--espaco-4);
+  background: var(--cor-superficie-alt);
+  border-radius: var(--raio-md);
+}
+
+.filtro-status__item {
+  border: none;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: var(--raio-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+  cursor: pointer;
+  transition:
+    background var(--transicao-rapida),
+    color var(--transicao-rapida);
+}
+
+.filtro-status__item--ativo {
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  box-shadow: var(--sombra-sm);
+}

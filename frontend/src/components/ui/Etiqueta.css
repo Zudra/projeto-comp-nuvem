@@ -1,0 +1,30 @@
+.etiqueta {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--raio-completo);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.etiqueta--sucesso {
+  background: var(--cor-sucesso-suave);
+  color: var(--cor-sucesso-texto);
+}
+
+.etiqueta--perigo {
+  background: var(--cor-perigo-suave);
+  color: var(--cor-perigo-texto);
+}
+
+.etiqueta--aviso {
+  background: var(--cor-aviso-suave);
+  color: var(--cor-aviso-texto);
+}
+
+.etiqueta--neutro {
+  background: var(--cor-superficie-alt);
+  color: var(--cor-texto-suave);
+}
