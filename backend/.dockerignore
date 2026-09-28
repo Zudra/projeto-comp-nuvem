@@ -1,0 +1,23 @@
+# .dockerignore (backend)
+#
+# Tudo o que está listado aqui NÃO é enviado para o Docker no contexto
+# de build, então também não pode ir parar dentro da imagem.
+
+# Dependências: são instaladas dentro da imagem com "npm ci"
+node_modules
+npm-debug.log*
+
+# Configuração local com senhas: no container ela chega por variáveis
+# de ambiente definidas no docker-compose.yml
+.env
+
+# Histórico e configuração do Git
+.git
+.gitignore
+
+# Scripts SQL: quem executa é o container do PostgreSQL, não a API
+*.sql
+
+# Arquivos do próprio Docker
+Dockerfile
+.dockerignore
