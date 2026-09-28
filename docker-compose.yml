@@ -1,0 +1,63 @@
+# docker-compose.yml
+#
+# Sobe o sistema inteiro com um único comando: docker compose up
+#
+#   db        PostgreSQL 17 (dados guardados no volume "pgdata")
+#   backend   API em Node.js/Express (porta 3000, só na rede interna)
+#   frontend  React servido pelo nginx, que repassa /api para o backend
+#
+# Configuração: as variáveis vêm do .env.example (valores fictícios,
+# versionados). Se existir um arquivo .env, os valores dele
+# sobrescrevem os do .env.example. O .env nunca vai para o Git.
+
+x-env-files: &env-files
+  - path: .env.example
+  - path: .env
+    required: false
+
+services:
+  db:
+    image: postgres:17-alpine
+    env_file: *env-files
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Scripts executados automaticamente na PRIMEIRA inicialização
+      # (quando o volume ainda está vazio), em ordem alfabética
+      - ./backend/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./backend/dados.sql:/docker-entrypoint-initdb.d/02-dados.sql:ro
+    healthcheck:
+      # -h 127.0.0.1 força conexão por TCP. Durante a inicialização o
+      # Postgres sobe um servidor temporário só com socket local; assim
+      # o banco só fica "healthy" depois que os scripts acima rodaram.
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    env_file: *env-files
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/ > /dev/null || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:
